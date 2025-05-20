@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
-import '../History.css'
+import "./../history.css"
 
 const history = [
     {

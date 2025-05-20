@@ -49,11 +49,8 @@ const ContactMe = () => {
         <Row className="mt-5 justify-content-center text-center">
           <Col md={6}>
             <h4>Connect With Me</h4>
-            <p>I'm also available through these channels:</p>
-            <div className="social-links">
-              <a href="https://linkedin.com" className="me-3"><i className="bi bi-linkedin"></i></a>
-              <a href="https://github.com" className="me-3"><i className="bi bi-github"></i></a>
-            </div>
+            <p>IGot a project waiting to be realized? Let's collaborate and make it happen!</p>
+     
           </Col>
         </Row>
 

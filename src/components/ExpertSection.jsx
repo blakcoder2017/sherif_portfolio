@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact, faPython } from "@fortawesome/free-brands-svg-icons"; // Brand icons
 import { faChartBar  } from "@fortawesome/free-solid-svg-icons"; // Solid icons
-import '../Expert.css'
+import './../Expert.css'
 const ExpertiseSection = () => {
     return (
         <section className="expertise-section py-5" id="expertise">

@@ -1,14 +1,14 @@
 import React from "react";
 import Scrollspy from "react-scrollspy";
-
-import '../navbar.css';
+import logo from '../assets/logo.png';
+import './../navbar.css';
 
 function Header() {
   return (
     <nav className="navbar navbar-expand-lg bg-white raised-header shadow-bottom fixed-top">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
-          <img src="../assets/logo.png" alt="Logo" height="40" className="d-inline-block align-top" />
+          <img src={logo} alt="Logo" height="40" className="d-inline-block align-top" />
         </a>
         <button
           className="navbar-toggler"

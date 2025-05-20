@@ -1,6 +1,8 @@
 import React from "react";
-import "../hero.css";
+import "./../hero.css";
 import TrueFocus from "./TrueFocus";
+import resume from "../assets/resume.pdf";
+import Pic from "../assets/final.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
@@ -11,7 +13,7 @@ const Hero = () => {
         <div className="row align-items-center">
           <div className="col-12 col-md-2 text-center text-md-start mb-4 mb-md-0">
            <img
-    src="../assets/final.png"
+    src={Pic}
     alt="Abubakari Sherifdeen"
     className="profile-img shadow"
   />
@@ -33,7 +35,7 @@ const Hero = () => {
             <TrueFocus />
             <br />
             <a
-              href="../assets/resume.pdf"
+              href={resume}
               download="resume.pdf"
               className="btn btn-outline-secondary"
             >
