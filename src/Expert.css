@@ -1,0 +1,42 @@
+.expertise-section {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: left; 
+}
+
+.expertise-section h2 {
+  color: white; 
+  text-align: left; 
+}
+
+.expertiseCol {
+  text-align: left; 
+}
+
+.expertiseCol h3 {
+  color: white; 
+  text-align: left;
+}
+
+.expertiseCol svg { 
+  color: white;
+}
+
+.tech-stack {
+  color: white; 
+  text-align: left;
+}
+
+.tech-stack strong {
+  color: white; 
+}
+
+.tech-stack ul {
+  padding-left: 1em; 
+  color: white; 
+}
+
+.tech-stack ul li {
+  color: white; 
+}

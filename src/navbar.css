@@ -1,0 +1,27 @@
+html {
+  scroll-padding-top: 80px; /* Match this to your header height */
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 100px; /* In case your header height changes on small screens */
+  }
+}
+
+.raised-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+.shadow-bottom {
+  box-shadow: 0 6px 20px -2px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .nav-link.active {
+  font-weight: bold;
+  color: #0d6efd !important;
+  border-bottom: 2px solid #0d6efd;
+}

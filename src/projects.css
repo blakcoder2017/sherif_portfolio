@@ -1,0 +1,18 @@
+#projects {
+  scroll-margin-top: 80px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+a svg {
+  color: #0d6efd;
+  transition: transform 0.2s ease;
+}
+
+a:hover svg {
+  transform: scale(1.2);
+  color: #0a58ca;
+}

@@ -1,0 +1,41 @@
+body {
+  font-family: 'Karla', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,p, button {
+  font-family: 'Karla', sans-serif; /* Apply to other elements as needed */
+}
+
+.navbar-bottom-shadow {
+  box-shadow:
+    5px 2px 5px rgba(0, 0, 0, 0.1), /* Initial subtle bottom shadow */
+    10px 2px 5px -2px rgba(0, 0, 0, 0.15),
+    15px 2px 5px -4px rgba(0, 0, 0, 0.2); /* Progressively stronger bottom shadows */
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.navbar-bottom-shadow:hover {
+  box-shadow:
+    10px 2px 5px rgba(0, 0, 0, 0.15),
+    20px 2px 5px -2px rgba(0, 0, 0, 0.2),
+    30px 2px 5px -4px rgba(0, 0, 0, 0.25);
+}
+
+.lanyard-wrapper {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1);
+  transform-origin: center;
+}
+
+.threads-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
