@@ -39,7 +39,6 @@ const Hero = () => {
               download="resume.pdf"
               className="btn btn-outline-secondary"
             >
-              <i className="bi bi-download me-2"></i>
               Download Resume
             </a>
           </div>

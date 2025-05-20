@@ -49,7 +49,7 @@ const ContactMe = () => {
         <Row className="mt-5 justify-content-center text-center">
           <Col md={6}>
             <h4>Connect With Me</h4>
-            <p>IGot a project waiting to be realized? Let's collaborate and make it happen!</p>
+            <p>Got a project waiting to be realized? Let's collaborate and make it happen!</p>
      
           </Col>
         </Row>
@@ -91,7 +91,7 @@ const ContactMe = () => {
                 />
               </Form.Group>
 
-              <Button variant="primary" type="submit" disabled={status === 'Sending your message...'}>
+              <Button variant="btn btn-outline-secondary" type="submit" disabled={status === 'Sending your message...'}>
                 {status === 'Sending your message...' ? 'Sending...' : 'Send Email'}
               </Button>
 
