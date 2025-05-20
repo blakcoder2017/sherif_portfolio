@@ -1,6 +1,5 @@
 import React from "react";
 import "../hero.css";
-import resumePDF from "../assets/resume.pdf";
 import TrueFocus from "./TrueFocus";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -34,7 +33,7 @@ const Hero = () => {
             <TrueFocus />
             <br />
             <a
-              href={resumePDF}
+              href="../assets/resume.pdf"
               download="resume.pdf"
               className="btn btn-outline-secondary"
             >
