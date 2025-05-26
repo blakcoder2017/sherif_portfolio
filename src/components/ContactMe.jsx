@@ -1,56 +1,67 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import emailjs from '@emailjs/browser';
 
 const ContactMe = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('');
+  const [statusType, setStatusType] = useState('');
 
-    useEffect(() => {
+  useEffect(() => {
     if (status) {
-      const timeout = setTimeout(() => setStatus(''), 5000);
+      const timeout = setTimeout(() => {
+        setStatus('');
+        setStatusType('');
+      }, 5000);
       return () => clearTimeout(timeout);
     }
   }, [status]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setStatus('Sending...');
+    event.stopPropagation();
 
-    const templateParams = {
-      user_name: name,
-      user_email: email,
-      message: message,
-    };
+    setStatus('Sending your message...');
+    setStatusType('info');
 
-    emailjs.send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      templateParams,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    )
-    .then((response) => {
-      setStatus('Email sent successfully!');
-      setName('');
-      setEmail('');
-      setMessage('');
-      console.log('Thanks for your email! I will reach', response.status, response.text);
+    fetch("https://formcarry.com/s/YnYA2H9Nlqn", {
+      method: 'POST',
+      headers: { 
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name, email, message })
     })
-    .catch((error) => {
-      setStatus(`Failed to send email: ${error.text}`);
+    .then(response => response.json())
+    .then(response => {
+      if (response.code === 200) {
+        setStatus("I have received your submission. I will reach out to you, thank you!");
+        setStatusType('success');
+        setName('');
+        setEmail('');
+        setMessage('');
+      } else if (response.code === 422) {
+        setStatus(response.message);
+        setStatusType('error');
+      } else {
+        setStatus(response.message);
+        setStatusType('error');
+      }
+    })
+    .catch(error => {
+      setStatus(error.message ? error.message : 'Something went wrong!');
+      setStatusType('error');
     });
   };
 
-   return (
+  return (
     <section className="contact-me bg-light py-5">
       <Container>
         <Row className="mt-5 justify-content-center text-center">
           <Col md={6}>
             <h4>Connect With Me</h4>
             <p>Got a project waiting to be realized? Let's collaborate and make it happen!</p>
-     
           </Col>
         </Row>
 
@@ -91,18 +102,18 @@ const ContactMe = () => {
                 />
               </Form.Group>
 
-              <Button variant="btn btn-outline-secondary" type="submit" disabled={status === 'Sending your message...'}>
-                {status === 'Sending your message...' ? 'Sending...' : 'Send Email'}
+              <Button variant="btn btn-outline-secondary" type="submit" disabled={statusType === 'info'}>
+                {statusType === 'info' ? 'Sending...' : 'Send Email'}
               </Button>
 
               {status && (
                 <div
                   className={`mt-3 alert ${
-                    status.includes("successfully")
-                      ? "alert-success"
-                      : status.includes("Sending")
-                      ? "alert-info"
-                      : "alert-danger"
+                    statusType === 'success'
+                      ? 'alert-success'
+                      : statusType === 'info'
+                      ? 'alert-info'
+                      : 'alert-danger'
                   }`}
                   role="alert"
                 >

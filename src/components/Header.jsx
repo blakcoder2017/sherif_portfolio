@@ -1,6 +1,6 @@
 import React from "react";
 import Scrollspy from "react-scrollspy";
-import logo from '../assets/logo.png';
+import logo from '../assets/final_logo.png';
 import './../navbar.css';
 
 function Header() {
