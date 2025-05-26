@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import ReactGA from 'react-ga4';
+
 
 const ContactMe = () => {
   const [name, setName] = useState('');
@@ -38,6 +40,12 @@ const ContactMe = () => {
       if (response.code === 200) {
         setStatus("I have received your submission. I will reach out to you, thank you!");
         setStatusType('success');
+
+          ReactGA.event({
+        category: 'Form',
+        action: 'Contact Form Submitted',
+        label: 'Contact Me Section'
+      });
         setName('');
         setEmail('');
         setMessage('');
