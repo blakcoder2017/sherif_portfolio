@@ -41,7 +41,7 @@ const ContactMe = () => {
         setStatus("I have received your submission. I will reach out to you, thank you!");
         setStatusType('success');
 
-          ReactGA.event({
+      ReactGA.event({
         category: 'Form',
         action: 'Contact Form Submitted',
         label: 'Contact Me Section'
